@@ -30,6 +30,9 @@ public class personalizedHboxFxml {
     @FXML
     private Button column3;
 
+    @FXML
+    private Label siNo;
+
     public void showMoreInfo(ActionEvent event) {
         Parent root;
         try {
@@ -45,8 +48,9 @@ public class personalizedHboxFxml {
         }
     }
 
-    public void setFields()
+    public void setFields(int i)
     {
+        siNo.setText(Integer.toString(i));
         column1.setText(movie.getTitle());
         String genres = String.join(", ", movie.getGenre());
         column2.setText(genres);

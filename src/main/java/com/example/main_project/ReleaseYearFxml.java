@@ -72,6 +72,7 @@ public class ReleaseYearFxml implements Initializable {
         titleBar.setVisible(true);
         vBox.getChildren().clear();
 
+        int j = 1;
         for (int i = movies.size() - 1; i >= 0; i--)
         {
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("personalizedHboxFxml.fxml"));
@@ -79,8 +80,9 @@ public class ReleaseYearFxml implements Initializable {
             try {
                 root = (Node) fxmlLoader.load();
                 ((personalizedHboxFxml) fxmlLoader.getController()).setMovie(movies.get(i));
-                ((personalizedHboxFxml) fxmlLoader.getController()).setFields();
+                ((personalizedHboxFxml) fxmlLoader.getController()).setFields(j);
                 vBox.getChildren().add(root);
+                j++;
             } catch (IOException e) {
                 throw new RuntimeException(e);
             }
