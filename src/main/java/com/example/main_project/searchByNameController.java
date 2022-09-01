@@ -42,9 +42,10 @@ public class searchByNameController implements Initializable {
     }
 
     public void changeToReleaseYear(ActionEvent event) {
-        Parent fxml = null;
         try {
-            fxml = FXMLLoader.load(getClass().getResource("releaseYearFxml.fxml"));
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("releaseYearFxml.fxml"));
+            Parent fxml = fxmlLoader.load();
+            ((ReleaseYearFxml) fxmlLoader.getController()).setMovieDataSet(movieDataSet);
             contentArea.getChildren().clear();
             contentArea.getChildren().addAll(fxml);
         } catch (IOException e) {
