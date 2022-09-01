@@ -1,16 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.text.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
-<Pane prefHeight="611.0" prefWidth="665.0" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.main_project.ReleaseYearFxml">
+<Pane prefHeight="611.0" prefWidth="665.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.main_project.ReleaseYearFxml">
    <children>
-      <TextField fx:id="textField" layoutX="35.0" layoutY="40.0" prefHeight="47.0" prefWidth="481.0" promptText="Enter Release Year">
+      <TextField fx:id="textField" layoutX="55.0" layoutY="39.0" prefHeight="47.0" prefWidth="493.0" promptText="Enter Release Year">
          <font>
             <Font name="SansSerif Bold Italic" size="18.0" />
          </font></TextField>
-      <Button layoutX="553.0" layoutY="40.0" mnemonicParsing="false" onAction="#search" prefHeight="47.0" prefWidth="73.0" style="-fx-background-color: #2E8BC0;" text="Search" textFill="WHITE">
+      <Button layoutX="548.0" layoutY="39.0" mnemonicParsing="false" onAction="#search" prefHeight="47.0" prefWidth="84.0" style="-fx-background-color: #2E8BC0;" text="Search" textFill="WHITE">
          <font>
             <Font name="SansSerif Bold" size="14.0" />
          </font></Button>
@@ -18,15 +24,7 @@
          <font>
             <Font name="SansSerif Bold" size="24.0" />
          </font></Label>
-      <VBox fx:id="vBox" layoutX="36.0" layoutY="154.0" prefHeight="433.0" prefWidth="593.0">
-         <children>
-            <ScrollPane prefHeight="443.0" prefWidth="593.0">
-              <content>
-                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="200.0" prefWidth="200.0" />
-              </content>
-            </ScrollPane>
-         </children></VBox>
-      <HBox fx:id="titleBar" layoutX="36.0" layoutY="122.0" prefHeight="33.0" prefWidth="593.0" style="-fx-background-color: #2E8BC0;">
+      <HBox fx:id="titleBar" layoutX="36.0" layoutY="122.0" prefHeight="33.0" prefWidth="614.0" style="-fx-background-color: #2E8BC0;">
          <children>
             <Label alignment="CENTER" prefHeight="33.0" prefWidth="246.0" text="Name" textFill="WHITE">
                <font>
@@ -45,5 +43,14 @@
             </Label>
          </children>
       </HBox>
+      <ScrollPane fx:id="scrollPane" layoutX="36.0" layoutY="155.0" prefHeight="441.0" prefWidth="614.0" style="-fx-background-color: #D4F1F4;">
+         <content>
+            <AnchorPane prefHeight="439.0" prefWidth="597.0" style="-fx-background-color: #D4F1F4;">
+               <children>
+                  <VBox fx:id="vBox" prefHeight="441.0" prefWidth="596.0" />
+               </children>
+            </AnchorPane>
+         </content>
+      </ScrollPane>
    </children>
 </Pane>

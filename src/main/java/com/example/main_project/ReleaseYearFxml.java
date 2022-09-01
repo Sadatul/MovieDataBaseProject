@@ -7,6 +7,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.control.Label;
+import javafx.scene.control.ScrollPane;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
@@ -31,9 +32,12 @@ public class ReleaseYearFxml implements Initializable {
     @FXML
     private HBox titleBar;
 
+    @FXML
+    private ScrollPane scrollPane;
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        vBox.setVisible(false);
+        scrollPane.setVisible(false);
         titleBar.setVisible(false);
     }
     public MovieDataSet getMovieDataSet() {
@@ -45,7 +49,7 @@ public class ReleaseYearFxml implements Initializable {
     }
 
     public void search(ActionEvent event) {
-        vBox.setVisible(false);
+        scrollPane.setVisible(false);
         titleBar.setVisible(false);
         errorMessage.setText("");
         int year;
@@ -64,7 +68,7 @@ public class ReleaseYearFxml implements Initializable {
             return;
         }
 
-        vBox.setVisible(true);
+        scrollPane.setVisible(true);
         titleBar.setVisible(true);
         vBox.getChildren().clear();
 
@@ -74,7 +78,8 @@ public class ReleaseYearFxml implements Initializable {
             Node root;
             try {
                 root = (Node) fxmlLoader.load();
-                ((personalizedHboxFxml) fxmlLoader.getController()).setFields(movies.get(i));
+                ((personalizedHboxFxml) fxmlLoader.getController()).setMovie(movies.get(i));
+                ((personalizedHboxFxml) fxmlLoader.getController()).setFields();
                 vBox.getChildren().add(root);
             } catch (IOException e) {
                 throw new RuntimeException(e);
