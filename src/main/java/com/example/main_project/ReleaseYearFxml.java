@@ -19,7 +19,7 @@ import java.util.ResourceBundle;
 
 public class ReleaseYearFxml implements Initializable {
 
-    MovieDataSet movieDataSet;
+    private MovieDataSet movieDataSet;
 
     @FXML
     private Label errorMessage;
