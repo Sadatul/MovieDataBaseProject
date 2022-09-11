@@ -1,5 +1,6 @@
 package com.example.main_project;
 
+import Client.ReadThread;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -11,26 +12,27 @@ import javafx.scene.layout.HBox;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
-public class personalizedHboxFxml {
+public class hBOXforComapanyCountFXML{
 
-    private Movie movie;
-
-    public Movie getMovie() {
-        return movie;
-    }
-
-    public void setMovie(Movie movie) {
-        this.movie = movie;
-    }
+//    private Movie movie;
+//
+//    public Movie getMovie() {
+//        return movie;
+//    }
+//
+//    public void setMovie(Movie movie) {
+//        this.movie = movie;
+//    }
 
     @FXML
     private Label column1;
     @FXML
     private Label column2;
-    @FXML
-    private Button column3;
-
+//    @FXML
+//    private Button column3;
+    private String name;
     @FXML
     private Label siNo;
     @FXML
@@ -39,9 +41,10 @@ public class personalizedHboxFxml {
     public void showMoreInfo(ActionEvent event) {
         Parent root;
         try {
-            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("moreInfo.fxml"));
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("showAllMovie.fxml"));
             root = fxmlLoader.load();
-            ((MoreInfo)fxmlLoader.getController()).setFields(movie);
+            ((ShowAllMovie)fxmlLoader.getController()).setName(name);
+            ((ShowAllMovie)fxmlLoader.getController()).getData();
             Stage stage = new Stage();
             stage.setTitle("More Info");
             stage.setScene(new Scene(root));
@@ -51,8 +54,9 @@ public class personalizedHboxFxml {
         }
     }
 
-    public void setFields(int i)
+    public void setFields(int i, String name, int count)
     {
+        this.name = name;
         if(i % 2 == 0)
         {
             hBox.setStyle("-fx-background-color:  #2E8BC0");
@@ -60,9 +64,9 @@ public class personalizedHboxFxml {
             column2.setStyle("-fx-text-fill: #ffffff");;
         }
         siNo.setText(Integer.toString(i));
-        column1.setText(movie.getTitle());
-        String genres = String.join(", ", movie.getGenre());
-        column2.setText(genres);
+        column1.setText(name);
+//        String genres = String.join(", ", movie.getGenre());
+        column2.setText(Integer.toString(count));
     }
 
 }

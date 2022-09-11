@@ -1,9 +1,10 @@
 package com.example.main_project;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Movie{
+public class Movie implements Serializable {
     private final String title;
     private final int year_of_release;
     private final List<String> genre;
@@ -13,7 +14,7 @@ public class Movie{
     private final long revenue;
     private final long profit;
 
-    Movie(String title)
+    public Movie(String title)
     {
         // This was created so we can use this for binarySearch
         this.title = title;

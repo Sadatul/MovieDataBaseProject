@@ -6,26 +6,12 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="611.0" prefWidth="1010.0" style="-fx-background-color: #D4F1F4;" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.main_project.searchByNameController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="611.0" prefWidth="1010.0" style="-fx-background-color: #D4F1F4;" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.main_project.MainMenuController">
    <children>
       <VBox prefHeight="611.0" prefWidth="260.0" style="-fx-background-color: #05445E;">
          <children>
             <ImageView fitHeight="150.0" fitWidth="260.0" pickOnBounds="true" preserveRatio="true" />
-            <Button alignment="TOP_LEFT" graphicTextGap="20.0" mnemonicParsing="false" onAction="#changeToName" prefHeight="51.0" prefWidth="260.0" style="-fx-background-color: #05445E;" text="Name" textFill="#d4f1f4">
-               <font>
-                  <Font name="SansSerif Bold" size="16.0" />
-               </font>
-               <graphic>
-                  <ImageView fitHeight="27.0" fitWidth="43.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@Pictures/icons8-search-48.png" />
-                     </image></ImageView>
-               </graphic>
-               <padding>
-                  <Insets left="40.0" />
-               </padding>
-            </Button>
-            <Button alignment="TOP_LEFT" graphicTextGap="20.0" layoutX="10.0" layoutY="160.0" mnemonicParsing="false" onAction="#changeToReleaseYear" prefHeight="51.0" prefWidth="260.0" style="-fx-background-color: #05445E;" text="Release Year" textFill="#d4f1f4">
+            <Button alignment="TOP_LEFT" graphicTextGap="20.0" layoutX="10.0" layoutY="365.0" mnemonicParsing="false" onAction="#changeToAllMovies" prefHeight="51.0" prefWidth="260.0" style="-fx-background-color: #05445E;" text="All Movies" textFill="#d4f1f4">
                <font>
                   <Font name="SansSerif Bold" size="16.0" />
                </font>
@@ -40,7 +26,7 @@
                   <Insets left="40.0" />
                </padding>
             </Button>
-            <Button alignment="TOP_LEFT" graphicTextGap="20.0" layoutX="10.0" layoutY="211.0" mnemonicParsing="false" prefHeight="51.0" prefWidth="260.0" style="-fx-background-color: #05445E;" text="Genre" textFill="#d4f1f4">
+            <Button alignment="TOP_LEFT" graphicTextGap="20.0" layoutX="10.0" layoutY="160.0" mnemonicParsing="false" onAction="#changeToRecentMovies" prefHeight="51.0" prefWidth="260.0" style="-fx-background-color: #05445E;" text="Recent Movies" textFill="#d4f1f4">
                <font>
                   <Font name="SansSerif Bold" size="16.0" />
                </font>
@@ -55,7 +41,7 @@
                   <Insets left="40.0" />
                </padding>
             </Button>
-            <Button alignment="TOP_LEFT" graphicTextGap="20.0" layoutX="10.0" layoutY="263.0" mnemonicParsing="false" prefHeight="51.0" prefWidth="260.0" style="-fx-background-color: #05445E;" text="Production Company" textFill="#d4f1f4">
+            <Button alignment="TOP_LEFT" graphicTextGap="20.0" layoutX="10.0" layoutY="211.0" mnemonicParsing="false" onAction="#changeToMaxRevenueMovie" prefHeight="51.0" prefWidth="260.0" style="-fx-background-color: #05445E;" text="Max Revenue Movie" textFill="#d4f1f4">
                <font>
                   <Font name="SansSerif Bold" size="16.0" />
                </font>
@@ -70,7 +56,7 @@
                   <Insets left="40.0" />
                </padding>
             </Button>
-            <Button alignment="TOP_LEFT" graphicTextGap="20.0" layoutX="10.0" layoutY="314.0" mnemonicParsing="false" prefHeight="51.0" prefWidth="260.0" style="-fx-background-color: #05445E;" text="Running Time" textFill="#d4f1f4">
+            <Button alignment="TOP_LEFT" graphicTextGap="20.0" layoutX="10.0" layoutY="263.0" mnemonicParsing="false" onAction="#changeToTotalProfit" prefHeight="51.0" prefWidth="260.0" style="-fx-background-color: #05445E;" text="Total Profit" textFill="#d4f1f4">
                <font>
                   <Font name="SansSerif Bold" size="16.0" />
                </font>
@@ -85,7 +71,7 @@
                   <Insets left="40.0" />
                </padding>
             </Button>
-            <Button alignment="TOP_LEFT" graphicTextGap="20.0" layoutX="10.0" layoutY="365.0" mnemonicParsing="false" prefHeight="51.0" prefWidth="260.0" style="-fx-background-color: #05445E;" text="Top 10 Movies" textFill="#d4f1f4">
+            <Button alignment="TOP_LEFT" graphicTextGap="20.0" layoutX="10.0" layoutY="314.0" mnemonicParsing="false" onAction="#changeToMoviesByCompanies" prefHeight="51.0" prefWidth="260.0" style="-fx-background-color: #05445E;" text="Movies By Companies" textFill="#d4f1f4">
                <font>
                   <Font name="SansSerif Bold" size="16.0" />
                </font>
