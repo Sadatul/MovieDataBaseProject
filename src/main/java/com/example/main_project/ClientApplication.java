@@ -42,13 +42,30 @@ public class ClientApplication extends Application {
                     } catch (IOException e) {
                         throw new RuntimeException(e);
                     }
-                    stage.close();
+//                    stage.close();
+                    swapToLogIn();
                 }
             }
         }));
 
     }
 
+    public void swapToLogIn()
+    {
+        client.setGotClient(false);
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("logIn.fxml"));
+        Parent root = null;
+        try {
+            root = fxmlLoader.load();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+        ((LogInController)fxmlLoader.getController()).setClientApplication(this);
+        Scene scene = new Scene(root);
+        stage.setTitle("Movie Data Base!");
+        stage.setScene(scene);
+        stage.show();
+    }
     public void swapToMainMenu()
     {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("MainMenu.fxml"));

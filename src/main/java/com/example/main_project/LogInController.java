@@ -44,7 +44,8 @@ public class LogInController implements Initializable {
         if (!(object instanceof MovieNotFoundException)) {
 //                System.out.println(s);
 //                    continue;
-            ClientApplication.client.setName(signInTextField.getText());
+            ClientApplication.client.setName((String) object);
+//            System.out.println(ClientApplication.client.getName());
             ClientApplication.client.setSocketWrapper(socketWrapper);
             ClientApplication.client.setGotClient(true);
             clientApplication.swapToMainMenu();

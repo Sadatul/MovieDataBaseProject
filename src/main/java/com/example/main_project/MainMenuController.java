@@ -15,6 +15,8 @@ public class MainMenuController implements Initializable {
     @FXML
     private StackPane contentArea;
 
+    private String state;
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 //        try {
@@ -30,6 +32,7 @@ public class MainMenuController implements Initializable {
     }
 
     public void changeToRecentMovies(ActionEvent event) {
+        state = "recent";
         try {
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("recentMovies.fxml"));
             Parent fxml = fxmlLoader.load();
@@ -41,6 +44,7 @@ public class MainMenuController implements Initializable {
     }
 
     public void changeToMaxRevenueMovie(ActionEvent event) {
+        state = "MaxRev";
         try {
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("maxRevenueMovie.fxml"));
             Parent fxml = fxmlLoader.load();
@@ -53,6 +57,7 @@ public class MainMenuController implements Initializable {
 
 
     public void changeToMoviesByCompanies(ActionEvent event) {
+        state = "MoviesByCompanies";
         try {
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("moviesByCompanies.fxml"));
             Parent fxml = fxmlLoader.load();
@@ -65,6 +70,7 @@ public class MainMenuController implements Initializable {
 
 
     public void changeToAllMovies(ActionEvent event) {
+        state = "AllMovies";
         try {
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("allMovies.fxml"));
             Parent fxml = fxmlLoader.load();
@@ -76,8 +82,22 @@ public class MainMenuController implements Initializable {
     }
 
     public void changeToTotalProfit(ActionEvent event) {
+        state = "TotalProfit";
         try {
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("totalProfitCompany.fxml"));
+            Parent fxml = fxmlLoader.load();
+//            Parent fxml = FXMLLoader.load(getClass().getResource("nameFxml.fxml"));
+            contentArea.getChildren().clear();
+            contentArea.getChildren().addAll(fxml);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    public void changeToAddMovie(ActionEvent event) {
+        state = "AddMovie";
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("AddMovie.fxml"));
             Parent fxml = fxmlLoader.load();
 //            Parent fxml = FXMLLoader.load(getClass().getResource("nameFxml.fxml"));
             contentArea.getChildren().clear();

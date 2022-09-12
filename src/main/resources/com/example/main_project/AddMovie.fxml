@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="611.0" prefWidth="750.0" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.main_project.AddMovie">
+   <children>
+      <TextField fx:id="movieName" layoutX="24.0" layoutY="31.0" prefHeight="60.0" prefWidth="567.0" promptText="Enter Movie Name">
+         <font>
+            <Font name="SansSerif Bold Italic" size="18.0" />
+         </font>
+      </TextField>
+      <Button fx:id="checkButton" layoutX="615.0" layoutY="31.0" mnemonicParsing="false" onAction="#check" prefHeight="60.0" prefWidth="103.0" style="-fx-background-color: #05445E;" text="Check" textFill="WHITE">
+         <font>
+            <Font name="SansSerif Bold" size="14.0" />
+         </font>
+      </Button>
+      <AnchorPane fx:id="hiddenPane" layoutX="8.0" layoutY="137.0" prefHeight="345.0" prefWidth="725.0">
+         <children>
+            <TextField fx:id="genre" layoutX="14.0" layoutY="14.0" prefHeight="60.0" prefWidth="700.0" promptText="Enter Movie Genres separated by commas(Minimum 1, Maximum 3). E.g genre1,genre2,genre3:">
+               <font>
+                  <Font name="SansSerif Bold Italic" size="15.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="releaseYear" layoutX="14.0" layoutY="95.0" prefHeight="60.0" prefWidth="308.0" promptText="Enter Release Year">
+               <font>
+                  <Font name="SansSerif Bold Italic" size="18.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="runningTime" layoutX="14.0" layoutY="176.0" prefHeight="60.0" prefWidth="308.0" promptText="Enter Running Time (Seconds)">
+               <font>
+                  <Font name="SansSerif Bold Italic" size="18.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="budget" layoutX="393.0" layoutY="95.0" prefHeight="60.0" prefWidth="308.0" promptText="Enter Budget">
+               <font>
+                  <Font name="SansSerif Bold Italic" size="18.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="revenue" layoutX="393.0" layoutY="176.0" prefHeight="60.0" prefWidth="308.0" promptText="Enter Revenue">
+               <font>
+                  <Font name="SansSerif Bold Italic" size="18.0" />
+               </font>
+            </TextField>
+            <Button fx:id="addButton" layoutX="312.0" layoutY="271.0" mnemonicParsing="false" onAction="#add" prefHeight="60.0" prefWidth="103.0" style="-fx-background-color: #05445E;" text="Add" textFill="WHITE">
+               <font>
+                  <Font name="SansSerif Bold" size="14.0" />
+               </font>
+            </Button>
+         </children>
+      </AnchorPane>
+      <Label fx:id="errorMessage" alignment="CENTER" layoutX="74.0" layoutY="492.0" prefHeight="82.0" prefWidth="601.0" textFill="#aa1945">
+         <font>
+            <Font name="SansSerif Bold" size="18.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

@@ -1,4 +1,5 @@
 package Client;
+import com.example.main_project.AddMovie;
 import com.example.main_project.Movie;
 import com.example.main_project.RecentMovies;
 import javafx.application.Platform;
@@ -62,7 +63,41 @@ public class ReadThread implements Runnable {
                         releaseYearFxml.print();
                     }
                 });
+            }
+            else if(releaseYearFxml instanceof AddMovie)
+            {
+                if(s == null)
+                {
+                    Platform.runLater(new Runnable() {
+                        @Override
+                        public void run() {
+                            ((AddMovie)releaseYearFxml).checkComplete();
+                        }
+                    });
 
+                }
+                else if(s instanceof String)
+                {
+                    if(((String)s).equals("##DONE"))
+                    {
+                        Platform.runLater(new Runnable() {
+                            @Override
+                            public void run() {
+                                ((AddMovie)releaseYearFxml).showMovie();
+                            }
+                        });
+                    }
+                }
+                else
+                {
+                    Platform.runLater(new Runnable() {
+                        @Override
+                        public void run() {
+                            ((AddMovie)releaseYearFxml).setMovie((Movie) s);
+                            ((AddMovie)releaseYearFxml).movieAlreadyIn();
+                        }
+                    });
+                }
             }
         } catch (Exception e) {
             System.out.println(e);
