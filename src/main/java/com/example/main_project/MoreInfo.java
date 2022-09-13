@@ -5,6 +5,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.stage.Stage;
 
@@ -26,6 +27,13 @@ public class MoreInfo {
     @FXML
     private Label revenue;
 
+    @FXML
+    private Button transferButton;
+
+    public void noTransferButton()
+    {
+        transferButton.setVisible(false);
+    }
     public void setFields(Movie movie)
     {
         name.setText(movie.getTitle());

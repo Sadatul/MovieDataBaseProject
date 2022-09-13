@@ -29,7 +29,12 @@ public class TransferWindow {
     public void noMovieFound()
     {
         errorMessage.setText("No Movie Found");
-        checkCompanyName = false;
+//        checkCompanyName = false;
+    }
+
+    public void movieTransferNotAllowed()
+    {
+        errorMessage.setText("This Company Can Transfer only its movies");
     }
     private ArrayList<Movie> movies;
     private boolean checkCompanyName;
@@ -39,10 +44,19 @@ public class TransferWindow {
     }
     public void companyCheck()
     {
-        if(movies.size() == 0)
-        {
-            errorMessage.setText("Company Not Found");
-        }
+        errorMessage.setText("Company Not Found");
+//        if(movies.size() == 0)
+//        {
+//            errorMessage.setText("Company Not Found");
+//        }
+//        else
+//        {
+//            try {
+//                ClientApplication.client.getSocketWrapper().write("$*" + movieName.getText() + "," + companyName.getText() + "," + ClientApplication.client.getName());
+//            } catch (IOException e) {
+//                throw new RuntimeException(e);
+//            }
+//        }
     }
     public void launchCompanyReadThread()
     {
@@ -50,6 +64,15 @@ public class TransferWindow {
             System.out.println("2");
             new ReadThreadForTransfer(ClientApplication.client.getSocketWrapper(), movies, this);
         }
+    }
+    public void transferComplete()
+    {
+        errorMessage.setText("Transfer Complete");
+    }
+
+    public void movieExists()
+    {
+        errorMessage.setText("Movie Already Exists");
     }
     public void transfer(ActionEvent event) {
         checkCompanyName = true;
@@ -61,17 +84,22 @@ public class TransferWindow {
             errorMessage.setText("Make Sure that the Movie names match");
             return;
         }
-        if(ClientApplication.client.getName().equalsIgnoreCase(companyName.getText()))
-        {
-            errorMessage.setText("Movie Already Exists");
-            return;
+//        if(ClientApplication.client.getName().equalsIgnoreCase(companyName.getText()))
+//        {
+//            errorMessage.setText("Movie Already Exists");
+//            return;
+//        }
+        try {
+            ClientApplication.client.getSocketWrapper().write("$*" + movieName.getText() + "," + companyName.getText() + "," + ClientApplication.client.getName());
+        } catch (IOException e) {
+            throw new RuntimeException(e);
         }
         Movie movie = new Movie("");
         new ReadThreadForTransfer(ClientApplication.client.getSocketWrapper(), movie, this);
-        try {
-            ClientApplication.client.getSocketWrapper().write("**" + movieName.getText());
-        } catch (IOException e) {
-        }
+//        try {
+//            ClientApplication.client.getSocketWrapper().write("**" + movieName.getText());
+//        } catch (IOException e) {
+//        }
 
     }
 }

@@ -65,6 +65,21 @@ public class Movie implements Serializable {
         return new Movie(tokens[0], Integer.parseInt(tokens[1]), genres, Integer.parseInt(tokens[5]), tokens[6], Long.parseLong(tokens[7]), Long.parseLong(tokens[8]));
     }
 
+    @Override
+    public boolean equals(Object o)
+    {
+        if(o == this)
+        {
+            return true;
+        }
+        if(!(o instanceof Movie))
+        {
+            return false;
+        }
+        Movie movie = (Movie) o;
+        return title.equalsIgnoreCase(movie.getTitle());
+    }
+
     public String getTitle() {
         return title;
     }

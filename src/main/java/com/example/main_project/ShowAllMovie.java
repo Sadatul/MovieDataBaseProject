@@ -47,6 +47,7 @@ public class ShowAllMovie extends RecentMovies {
             try {
                 root = (Node) fxmlLoader.load();
                 ((personalizedHboxFxml) fxmlLoader.getController()).setMovie(movies.get(i));
+                ((personalizedHboxFxml) fxmlLoader.getController()).setShowTransfer(false);
                 ((personalizedHboxFxml) fxmlLoader.getController()).setFields(j);
                 vBox.getChildren().add(root);
                 j++;

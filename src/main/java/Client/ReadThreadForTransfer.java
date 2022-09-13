@@ -25,43 +25,79 @@ public class ReadThreadForTransfer implements Runnable{
     public void run() {
         try {
             Object s = socketWrapper.read();
-            if(classObject instanceof TransferWindow)
-            {
+            if(classObject instanceof TransferWindow) {
                 TransferWindow tWindow = (TransferWindow) classObject;
-                if(data instanceof Movie)
-                {
-                    if(s == null)
+                if (s == null) {
+                    Platform.runLater(new Runnable() {
+                        @Override
+                        public void run() {
+                            tWindow.noMovieFound();
+                        }
+                    });
+                }
+//                    else
+//                    {  System.out.println("1");
+//                       socketWrapper.write("$$" + tWindow.returnCompanyName());
+//                        Platform.runLater(new Runnable() {
+//                            @Override
+//                            public void run() {
+//                                tWindow.launchCompanyReadThread();
+//                            }
+//                        });
+//                    }
+
+//                else if (data instanceof ArrayList) {
+//                    ArrayList<Movie> movies = (ArrayList<Movie>) data;
+//                    movies.addAll((ArrayList<Movie>) s);
+//                    Platform.runLater(new Runnable() {
+//                        @Override
+//                        public void run() {
+//                            System.out.println("3");
+//                            tWindow.companyCheck();
+//                        }
+//                    });
+//                }
+                else if (s instanceof String) {
+                    System.out.println("YES");
+                    String tmp = (String) s;
+                    if (tmp.equals("#NOTALLOWEDTOTRANSFER#")) {
+                        Platform.runLater(new Runnable() {
+                            @Override
+                            public void run() {
+                                tWindow.movieTransferNotAllowed();
+                            }
+                        });
+                    }
+                    else if (tmp.equals(("#NOCOMPANYFOUND#"))) {
+                        System.out.println("Company Not Found");
+                        Platform.runLater(new Runnable() {
+                            @Override
+                            public void run() {
+                                tWindow.companyCheck();
+                            }
+                        });
+                    }
+
+                    else if (tmp.equals(("#MOVIEEXIST#"))) {
+                        Platform.runLater(new Runnable() {
+                            @Override
+                            public void run() {
+                                tWindow.movieExists();
+                            }
+                        });
+                    }
+                    else if(tmp.equals("#TRANSFERRED#"))
                     {
                         Platform.runLater(new Runnable() {
                             @Override
                             public void run() {
-                                tWindow.noMovieFound();
+                                tWindow.transferComplete();
                             }
                         });
                     }
-                    else
-                    {  System.out.println("1");
-                       socketWrapper.write("$$" + tWindow.returnCompanyName());
-                        Platform.runLater(new Runnable() {
-                            @Override
-                            public void run() {
-                                tWindow.launchCompanyReadThread();
-                            }
-                        });
-                    }
-                }
-                else if (data instanceof ArrayList) {
-                    ArrayList<Movie> movies = (ArrayList<Movie>) data;
-                    movies.addAll((ArrayList<Movie>) s);
-                    Platform.runLater(new Runnable() {
-                        @Override
-                        public void run() {
-                            System.out.println("3");
-                            tWindow.companyCheck();
-                        }
-                    });
-                }
 
+
+                }
             }
         } catch (IOException e) {
             throw new RuntimeException(e);

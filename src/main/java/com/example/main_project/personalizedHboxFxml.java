@@ -35,13 +35,21 @@ public class personalizedHboxFxml {
     private Label siNo;
     @FXML
     private HBox hBox;
-
+    private boolean showTransfer  = true;
+    public void setShowTransfer(boolean bol)
+    {
+        showTransfer = bol;
+    }
     public void showMoreInfo(ActionEvent event) {
         Parent root;
         try {
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("moreInfo.fxml"));
             root = fxmlLoader.load();
             ((MoreInfo)fxmlLoader.getController()).setFields(movie);
+            if(!showTransfer)
+            {
+                ((MoreInfo)fxmlLoader.getController()).noTransferButton();
+            }
             Stage stage = new Stage();
             stage.setTitle("More Info");
             stage.setScene(new Scene(root));
