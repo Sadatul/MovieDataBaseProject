@@ -9,7 +9,7 @@
 
 <AnchorPane prefHeight="370.0" prefWidth="577.0" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.main_project.LogInController">
    <children>
-      <TextField fx:id="signInTextField" layoutX="32.0" layoutY="166.0" prefHeight="60.0" prefWidth="513.0" promptText="Enter Company Name">
+      <TextField fx:id="signInTextField" layoutX="32.0" layoutY="166.0" prefHeight="60.0" prefWidth="513.0" promptText="Enter Company Name" style="-fx-highlight-fill: null; -fx-highlight-text-fill: null;">
          <font>
             <Font name="SansSerif Bold Italic" size="18.0" />
          </font>

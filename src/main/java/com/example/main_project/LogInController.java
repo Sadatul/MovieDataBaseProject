@@ -2,6 +2,7 @@ package com.example.main_project;
 
 import Client.Client;
 
+import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -61,6 +62,7 @@ public class LogInController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+        signInTextField.setFocusTraversable(false);
 //        gotName = false;
     }
 //    public SocketWrapper getSocketWrapper()
