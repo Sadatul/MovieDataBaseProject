@@ -1,8 +1,5 @@
 package Client;
-import com.example.main_project.AddMovie;
-import com.example.main_project.Movie;
-import com.example.main_project.RecentMovies;
-import com.example.main_project.TransferWindow;
+import com.example.main_project.*;
 import javafx.application.Platform;
 import util.SocketWrapper;
 
@@ -15,10 +12,13 @@ public class ReadThread implements Runnable {
     private Object data;
 
     private Object releaseYearFxml;
-    public ReadThread(SocketWrapper socketWrapper, Object data, Object releaseYearFxml) {
+
+    private MainMenuController mainMenuController;
+    public ReadThread(SocketWrapper socketWrapper, Object data, Object releaseYearFxml, MainMenuController mainMenuController) {
         this.socketWrapper = socketWrapper;
         this.data = data;
         this.releaseYearFxml = releaseYearFxml;
+        this.mainMenuController = mainMenuController;
         this.thr = new Thread(this);
         thr.start();
     }
@@ -35,7 +35,7 @@ public class ReadThread implements Runnable {
     public void run() {
         try {
             while (true) {
-                System.out.println("YES");
+//                System.out.println("YES");
                 Object s = socketWrapper.read();
 //                System.out.println("YES");
                 if(releaseYearFxml instanceof TransferWindow) {
@@ -83,6 +83,7 @@ public class ReadThread implements Runnable {
                                 @Override
                                 public void run() {
                                     tWindow.transferComplete();
+                                    mainMenuController.refresh();
                                 }
                             });
                         }
@@ -146,6 +147,19 @@ public class ReadThread implements Runnable {
                             public void run() {
                                 ((AddMovie) releaseYearFxml).setMovie((Movie) s);
                                 ((AddMovie) releaseYearFxml).movieAlreadyIn();
+                            }
+                        });
+                    }
+                }
+                else if(s instanceof String)
+                {
+                    if(((String)s).equals("#MOVIETRANSFERRED#"))
+                    {
+                        Platform.runLater(new Runnable() {
+                            @Override
+                            public void run() {
+//                                tWindow.transferComplete();
+                                mainMenuController.refresh();
                             }
                         });
                     }

@@ -22,7 +22,7 @@ public class MainMenuController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        readThread = new ReadThread(ClientApplication.client.getSocketWrapper(), new Movie(""), new RecentMovies());
+        readThread = new ReadThread(ClientApplication.client.getSocketWrapper(), new Movie(""), new RecentMovies(), this);
 //        try {
 //            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("nameFxml.fxml"));
 //            Parent fxml = fxmlLoader.load();
@@ -110,4 +110,16 @@ public class MainMenuController implements Initializable {
             throw new RuntimeException(e);
         }
     }
+
+    public void refresh()
+    {
+//        System.out.println(state);
+        if(state.equals("recent")) changeToRecentMovies(new ActionEvent());
+        if(state.equals("MaxRev")) changeToMaxRevenueMovie(new ActionEvent());
+        if(state.equals("MoviesByCompanies")) changeToMoviesByCompanies(new ActionEvent());
+        if(state.equals("AllMovies")) changeToAllMovies(new ActionEvent());
+        if(state.equals("TotalProfit")) changeToTotalProfit(new ActionEvent());
+    }
+
+
 }
