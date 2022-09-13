@@ -62,7 +62,9 @@ public class TransferWindow {
     {
         if(checkCompanyName) {
             System.out.println("2");
-            new ReadThreadForTransfer(ClientApplication.client.getSocketWrapper(), movies, this);
+//            new ReadThreadForTransfer(ClientApplication.client.getSocketWrapper(), movies, this);
+            MainMenuController.readThread.setData(movies);
+            MainMenuController.readThread.setReleaseYearFxml(this);
         }
     }
     public void transferComplete()
@@ -95,7 +97,8 @@ public class TransferWindow {
             throw new RuntimeException(e);
         }
         Movie movie = new Movie("");
-        new ReadThreadForTransfer(ClientApplication.client.getSocketWrapper(), movie, this);
+        MainMenuController.readThread.setData(movie);
+        MainMenuController.readThread.setReleaseYearFxml(this);
 //        try {
 //            ClientApplication.client.getSocketWrapper().write("**" + movieName.getText());
 //        } catch (IOException e) {

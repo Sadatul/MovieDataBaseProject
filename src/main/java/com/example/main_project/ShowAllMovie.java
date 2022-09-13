@@ -30,7 +30,9 @@ public class ShowAllMovie extends RecentMovies {
     public void getData()
     {
         movies = new ArrayList<>();
-        new ReadThread(ClientApplication.client.getSocketWrapper(), movies, this);
+//        new ReadThread(ClientApplication.client.getSocketWrapper(), movies, this);
+        MainMenuController.readThread.setData(movies);
+        MainMenuController.readThread.setReleaseYearFxml(this);
         try {
             ClientApplication.client.getSocketWrapper().write("$$" + name);
         } catch (IOException e) {

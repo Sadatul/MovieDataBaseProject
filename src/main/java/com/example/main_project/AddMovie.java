@@ -98,7 +98,9 @@ public class AddMovie extends RecentMovies{
             errorMessage.setText("Must Enter a Movie Name");
             return;
         }
-        new ReadThread(ClientApplication.client.getSocketWrapper(), movie, this);
+//        new ReadThread(ClientApplication.client.getSocketWrapper(), movie, this);
+        MainMenuController.readThread.setData(movie);
+        MainMenuController.readThread.setReleaseYearFxml(this);
         try {
             ClientApplication.client.getSocketWrapper().write("**" + movieName.getText());
         } catch (IOException e) {
@@ -136,7 +138,9 @@ public class AddMovie extends RecentMovies{
         }
 
         movie = new Movie(movieName.getText(), year, genreList, runtime, ClientApplication.client.getName(), budget_val, revenue_val);
-        new ReadThread(ClientApplication.client.getSocketWrapper(), movie, this);
+//        new ReadThread(ClientApplication.client.getSocketWrapper(), movie, this);
+        MainMenuController.readThread.setData(movie);
+        MainMenuController.readThread.setReleaseYearFxml(this);
         try {
             ClientApplication.client.getSocketWrapper().write("##" + movie.objectToString());
         } catch (IOException e) {

@@ -35,28 +35,6 @@ public class ReadThreadForTransfer implements Runnable{
                         }
                     });
                 }
-//                    else
-//                    {  System.out.println("1");
-//                       socketWrapper.write("$$" + tWindow.returnCompanyName());
-//                        Platform.runLater(new Runnable() {
-//                            @Override
-//                            public void run() {
-//                                tWindow.launchCompanyReadThread();
-//                            }
-//                        });
-//                    }
-
-//                else if (data instanceof ArrayList) {
-//                    ArrayList<Movie> movies = (ArrayList<Movie>) data;
-//                    movies.addAll((ArrayList<Movie>) s);
-//                    Platform.runLater(new Runnable() {
-//                        @Override
-//                        public void run() {
-//                            System.out.println("3");
-//                            tWindow.companyCheck();
-//                        }
-//                    });
-//                }
                 else if (s instanceof String) {
                     System.out.println("YES");
                     String tmp = (String) s;

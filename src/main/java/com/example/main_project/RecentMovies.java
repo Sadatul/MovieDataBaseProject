@@ -30,7 +30,16 @@ public class RecentMovies implements Initializable {
 //        scrollPane.setVisible(false);
 //        titleBar.setVisible(false);
         movies = new ArrayList<Movie>();
-        new ReadThread(ClientApplication.client.getSocketWrapper(), movies, this);
+//        new ReadThread(ClientApplication.client.getSocketWrapper(), movies, this);
+        System.out.println("DONE");
+        MainMenuController.readThread.setData(movies);
+        MainMenuController.readThread.setReleaseYearFxml(this);
+        System.out.println("DONE");
+//        try {
+//            MainMenuController.readThread.thr.join();
+//        } catch (InterruptedException e) {
+//            throw new RuntimeException(e);
+//        }
         try {
             ClientApplication.client.getSocketWrapper().write("1");
         } catch (IOException e) {
@@ -61,7 +70,9 @@ public class RecentMovies implements Initializable {
         vBox.getChildren().clear();
 
         movies = new ArrayList<>();
-        new ReadThread(ClientApplication.client.getSocketWrapper(), movies, this);
+//        new ReadThread(ClientApplication.client.getSocketWrapper(), movies, this);
+        MainMenuController.readThread.setData(movies);
+        MainMenuController.readThread.setReleaseYearFxml(this);
         try {
             ClientApplication.client.getSocketWrapper().write("1");
         } catch (IOException e) {

@@ -31,7 +31,9 @@ public class MoviesByCompanies extends RecentMovies {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         map = new HashMap<>();
-        new ReadThread(ClientApplication.client.getSocketWrapper(), map, this);
+//        new ReadThread(ClientApplication.client.getSocketWrapper(), map, this);
+        MainMenuController.readThread.setData(map);
+        MainMenuController.readThread.setReleaseYearFxml(this);
         try {
             ClientApplication.client.getSocketWrapper().write("4");
         } catch (IOException e) {
@@ -62,7 +64,9 @@ public class MoviesByCompanies extends RecentMovies {
         vBox.getChildren().clear();
 
         map = new HashMap<>();
-        new ReadThread(ClientApplication.client.getSocketWrapper(), map, this);
+//        new ReadThread(ClientApplication.client.getSocketWrapper(), map, this);
+        MainMenuController.readThread.setData(map);
+        MainMenuController.readThread.setReleaseYearFxml(this);
         try {
             ClientApplication.client.getSocketWrapper().write("4");
         } catch (IOException e) {

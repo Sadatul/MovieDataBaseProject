@@ -21,7 +21,9 @@ public class TotalProfitCompany extends RecentMovies {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         arr = new long[1];
-        new ReadThread(ClientApplication.client.getSocketWrapper(), arr, this);
+//        new ReadThread(ClientApplication.client.getSocketWrapper(), arr, this);
+        MainMenuController.readThread.setData(arr);
+        MainMenuController.readThread.setReleaseYearFxml(this);
         try {
             ClientApplication.client.getSocketWrapper().write("3");
         } catch (IOException e) {
@@ -36,7 +38,9 @@ public class TotalProfitCompany extends RecentMovies {
 
     public void reload(ActionEvent event) {
         arr = new long[1];
-        new ReadThread(ClientApplication.client.getSocketWrapper(), arr, this);
+//        new ReadThread(ClientApplication.client.getSocketWrapper(), arr, this);
+        MainMenuController.readThread.setData(arr);
+        MainMenuController.readThread.setReleaseYearFxml(this);
         try {
             ClientApplication.client.getSocketWrapper().write("3");
         } catch (IOException e) {

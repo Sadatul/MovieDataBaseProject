@@ -1,5 +1,6 @@
 package com.example.main_project;
 
+import Client.ReadThread;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -17,8 +18,11 @@ public class MainMenuController implements Initializable {
 
     private String state;
 
+    public static ReadThread readThread;
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+        readThread = new ReadThread(ClientApplication.client.getSocketWrapper(), new Movie(""), new RecentMovies());
 //        try {
 //            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("nameFxml.fxml"));
 //            Parent fxml = fxmlLoader.load();

@@ -26,7 +26,9 @@ public class MaxRevenueMovie extends RecentMovies {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         movies = new ArrayList<Movie>();
-        new ReadThread(ClientApplication.client.getSocketWrapper(), movies, this);
+//        new ReadThread(ClientApplication.client.getSocketWrapper(), movies, this);
+        MainMenuController.readThread.setData(movies);
+        MainMenuController.readThread.setReleaseYearFxml(this);
         try {
             ClientApplication.client.getSocketWrapper().write("2");
         } catch (IOException e) {
@@ -59,7 +61,9 @@ public class MaxRevenueMovie extends RecentMovies {
         vBox.getChildren().clear();
 
         movies = new ArrayList<>();
-        new ReadThread(ClientApplication.client.getSocketWrapper(), movies, this);
+//        new ReadThread(ClientApplication.client.getSocketWrapper(), movies, this);
+        MainMenuController.readThread.setData(movies);
+        MainMenuController.readThread.setReleaseYearFxml(this);
         try {
             ClientApplication.client.getSocketWrapper().write("2");
         } catch (IOException e) {
