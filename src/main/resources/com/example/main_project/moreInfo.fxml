@@ -145,7 +145,7 @@
             </HBox>
          </children>
       </AnchorPane>
-      <Button fx:id="transferButton" layoutX="281.0" layoutY="279.0" mnemonicParsing="false" onAction="#transfer" prefHeight="47.0" prefWidth="103.0" style="-fx-background-color: #05445E;" text="Transfer" textFill="WHITE">
+      <Button fx:id="transferButton" layoutX="281.0" layoutY="279.0" mnemonicParsing="false" onAction="#transfer" prefHeight="47.0" prefWidth="103.0" styleClass="inbutton" text="Transfer" textFill="WHITE">
          <font>
             <Font name="SansSerif Bold" size="14.0" />
          </font>
