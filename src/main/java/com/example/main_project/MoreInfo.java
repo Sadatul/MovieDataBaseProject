@@ -50,18 +50,22 @@ public class MoreInfo {
     }
 
     public void transfer(ActionEvent event) {
-        Parent root;
-        try {
-            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("TransferWindow.fxml"));
-            root = fxmlLoader.load();
-            ((TransferWindow)fxmlLoader.getController()).setName1(name.getText());
-            Stage stage = new Stage();
-            stage.setTitle("Transfer Page");
-            stage.setScene(new Scene(root));
-            baseStage.close();
-            stage.show();
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
+        MainMenuController.me.setSetFirstName(true);
+        MainMenuController.me.setTransferMovieName(name.getText());
+        baseStage.close();
+        MainMenuController.me.changeToTransfer(new ActionEvent());
+//        Parent root;
+//        try {
+//            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("TransferWindow.fxml"));
+//            root = fxmlLoader.load();
+//            ((TransferWindow)fxmlLoader.getController()).setName1(name.getText());
+//            Stage stage = new Stage();
+//            stage.setTitle("Transfer Page");
+//            stage.setScene(new Scene(root));
+//            baseStage.close();
+//            stage.show();
+//        } catch (IOException e) {
+//            throw new RuntimeException(e);
+//        }
     }
 }

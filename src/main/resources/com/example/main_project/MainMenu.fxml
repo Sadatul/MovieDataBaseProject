@@ -104,14 +104,14 @@
                   <Insets left="40.0" />
                </padding>
             </Button>
-            <Button alignment="TOP_LEFT" graphicTextGap="20.0" layoutX="10.0" layoutY="417.0" mnemonicParsing="false" prefHeight="51.0" prefWidth="260.0" style="-fx-background-color: #05445E;" text="Main Menu" textFill="#d4f1f4">
+            <Button alignment="TOP_LEFT" graphicTextGap="20.0" layoutX="10.0" layoutY="417.0" mnemonicParsing="false" onAction="#changeToTransfer" prefHeight="51.0" prefWidth="260.0" style="-fx-background-color: #05445E;" text="Transfer" textFill="#d4f1f4">
                <font>
                   <Font name="SansSerif Bold" size="16.0" />
                </font>
                <graphic>
-                  <ImageView fitHeight="49.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="27.0" fitWidth="43.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@Pictures/icons8-back-67.png" />
+                        <Image url="@Pictures/icons8-search-48.png" />
                      </image>
                   </ImageView>
                </graphic>

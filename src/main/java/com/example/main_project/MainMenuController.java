@@ -17,12 +17,28 @@ public class MainMenuController implements Initializable {
     private StackPane contentArea;
 
     private String state;
+    private String transferMovieName;
+    private boolean setFirstName;
+
+    public void setTransferMovieName(String transferMovieName) {
+        this.transferMovieName = transferMovieName;
+    }
+
+    public void setSetFirstName(boolean setFirstName) {
+        this.setFirstName = setFirstName;
+    }
 
     public static ReadThread readThread;
+    static MainMenuController me;
+
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         readThread = new ReadThread(ClientApplication.client.getSocketWrapper(), new Movie(""), new RecentMovies(), this);
+        me = this;
+        setFirstName = false;
+        transferMovieName = "";
+
 //        try {
 //            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("nameFxml.fxml"));
 //            Parent fxml = fxmlLoader.load();
@@ -111,6 +127,24 @@ public class MainMenuController implements Initializable {
         }
     }
 
+    public void changeToTransfer(ActionEvent event) {
+        state = "Transfer";
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("TransferWindow.fxml"));
+            Parent fxml = fxmlLoader.load();
+            if(setFirstName)
+            {
+                ((TransferWindow)fxmlLoader.getController()).setName1(transferMovieName);
+                transferMovieName = "";
+                setFirstName = false;
+            }
+//            Parent fxml = FXMLLoader.load(getClass().getResource("nameFxml.fxml"));
+            contentArea.getChildren().clear();
+            contentArea.getChildren().addAll(fxml);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
     public void refresh()
     {
 //        System.out.println(state);
@@ -120,6 +154,5 @@ public class MainMenuController implements Initializable {
         if(state.equals("AllMovies")) changeToAllMovies(new ActionEvent());
         if(state.equals("TotalProfit")) changeToTotalProfit(new ActionEvent());
     }
-
 
 }
