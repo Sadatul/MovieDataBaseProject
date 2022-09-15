@@ -45,12 +45,12 @@ public class personalizedHboxFxml {
         try {
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("moreInfo.fxml"));
             root = fxmlLoader.load();
-            ((MoreInfo)fxmlLoader.getController()).setFields(movie);
+            Stage stage = new Stage();
+            ((MoreInfo)fxmlLoader.getController()).setFields(movie, stage);
             if(!showTransfer)
             {
                 ((MoreInfo)fxmlLoader.getController()).noTransferButton();
             }
-            Stage stage = new Stage();
             stage.setTitle("More Info");
             stage.setScene(new Scene(root));
             stage.show();

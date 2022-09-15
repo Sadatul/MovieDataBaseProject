@@ -10,7 +10,6 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
-import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -52,6 +51,11 @@ public class AddMovie extends RecentMovies{
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         hiddenPane.setVisible(false);
+        genre.setFocusTraversable(false);
+        budget.setFocusTraversable(false);
+        releaseYear.setFocusTraversable(false);
+        revenue.setFocusTraversable(false);
+        runningTime.setFocusTraversable(false);
 //        scrollPane.setVisible(false);
 //        titleBar.setVisible(false);
 //        movies = new ArrayList<Movie>();
@@ -69,8 +73,8 @@ public class AddMovie extends RecentMovies{
         try {
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("moreInfo.fxml"));
             root = fxmlLoader.load();
-            ((MoreInfo)fxmlLoader.getController()).setFields(movie);
             Stage stage = new Stage();
+            ((MoreInfo)fxmlLoader.getController()).setFields(movie, stage);
             stage.setTitle("More Info");
             stage.setScene(new Scene(root));
             stage.show();
@@ -89,6 +93,7 @@ public class AddMovie extends RecentMovies{
     public void checkComplete()
     {
         hiddenPane.setVisible(true);
+        movieName.setEditable(false);
         checkButton.setVisible(false);
     }
     public void check(ActionEvent event) {

@@ -30,12 +30,15 @@ public class MoreInfo {
     @FXML
     private Button transferButton;
 
+    Stage baseStage;
+
     public void noTransferButton()
     {
         transferButton.setVisible(false);
     }
-    public void setFields(Movie movie)
+    public void setFields(Movie movie, Stage stage)
     {
+        this.baseStage = stage;
         name.setText(movie.getTitle());
         String genreString = String.join(", ", movie.getGenre());
         genre.setText(genreString);
@@ -55,6 +58,7 @@ public class MoreInfo {
             Stage stage = new Stage();
             stage.setTitle("Transfer Page");
             stage.setScene(new Scene(root));
+            baseStage.close();
             stage.show();
         } catch (IOException e) {
             throw new RuntimeException(e);
