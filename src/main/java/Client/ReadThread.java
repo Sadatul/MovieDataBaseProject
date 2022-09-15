@@ -24,12 +24,12 @@ public class ReadThread implements Runnable {
     }
     public void setData(Object o)
     {
-        System.out.println("Setted Data");
+//        System.out.println("Setted Data");
         data = o;
     }
     public void setReleaseYearFxml(Object releaseYearFxml)
     {
-        System.out.println("Setted Class");
+//        System.out.println("Setted Class");
         this.releaseYearFxml = releaseYearFxml;
     }
     public void run() {

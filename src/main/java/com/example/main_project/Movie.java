@@ -9,7 +9,12 @@ public class Movie implements Serializable {
     private final int year_of_release;
     private final List<String> genre;
     private final int running_time;
-    private final String production_company;
+
+    public void setProduction_company(String production_company) {
+        this.production_company = production_company;
+    }
+
+    private String production_company;
     private final long budget;
     private final long revenue;
     private final long profit;

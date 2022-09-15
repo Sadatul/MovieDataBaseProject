@@ -1,7 +1,5 @@
 package com.example.main_project;
 
-import Client.Client;
-import Client.ReadThreadForTransfer;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;

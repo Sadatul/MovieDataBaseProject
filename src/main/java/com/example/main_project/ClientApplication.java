@@ -24,7 +24,7 @@ public class ClientApplication extends Application {
 
         ((LogInController)fxmlLoader.getController()).setClientApplication(this);
         Scene scene = new Scene(root);
-        stage.setTitle("Movie Data Base!");
+        stage.setTitle("Log In");
         stage.setScene(scene);
         stage.show();
 
@@ -62,7 +62,8 @@ public class ClientApplication extends Application {
         }
         ((LogInController)fxmlLoader.getController()).setClientApplication(this);
         Scene scene = new Scene(root);
-        stage.setTitle("Movie Data Base!");
+//        stage.setTitle("Movie Data Base!");
+        stage.setTitle("Log In");
         stage.setScene(scene);
         stage.show();
     }
@@ -77,7 +78,8 @@ public class ClientApplication extends Application {
         }
 
         Scene scene = new Scene(root);
-        stage.setTitle("Movie Data Base!");
+//        stage.setTitle("Movie Data Base!");
+        stage.setTitle(client.getName());
         stage.setScene(scene);
         stage.show();
     }
