@@ -26,6 +26,7 @@ public class ClientApplication extends Application {
         Scene scene = new Scene(root);
         stage.setTitle("Log In");
         stage.setScene(scene);
+        stage.setResizable(false);
         stage.show();
 
         stage.setOnCloseRequest((event -> {

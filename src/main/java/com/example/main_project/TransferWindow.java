@@ -75,6 +75,11 @@ public class TransferWindow {
         errorMessage.setText("Movie Already Exists");
     }
     public void transfer(ActionEvent event) {
+        if(movieName.getText().equals(""))
+        {
+            errorMessage.setText("Enter a Movie Name");
+            return;
+        }
         checkCompanyName = true;
         errorMessage.setText("");
         movies = new ArrayList<>();

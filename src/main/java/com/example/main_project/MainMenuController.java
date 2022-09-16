@@ -115,14 +115,14 @@ public class MainMenuController implements Initializable {
     }
 
 
-    public void changeToMoviesByCompanies(ActionEvent event) {
-        state = "MoviesByCompanies";
+    public void changeToDashBoard(ActionEvent event) {
+        state = "DashBoard";
         setButtonDefaultColor();
         companyButton.setOnMouseEntered(event1 -> {});
         companyButton.setOnMouseExited(event1 -> {});
         companyButton.setStyle("-fx-background-color:  #98c1d9; -fx-text-fill: #293241");
         try {
-            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("moviesByCompanies.fxml"));
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("dashBoard.fxml"));
             Parent fxml = fxmlLoader.load();
             contentArea.getChildren().clear();
             contentArea.getChildren().addAll(fxml);
@@ -206,12 +206,22 @@ public class MainMenuController implements Initializable {
     }
     public void refresh()
     {
-//        System.out.println(state);
-        if(state.equals("recent")) changeToRecentMovies(new ActionEvent());
-        if(state.equals("MaxRev")) changeToMaxRevenueMovie(new ActionEvent());
-        if(state.equals("MoviesByCompanies")) changeToMoviesByCompanies(new ActionEvent());
-        if(state.equals("AllMovies")) changeToAllMovies(new ActionEvent());
-        if(state.equals("TotalProfit")) changeToTotalProfit(new ActionEvent());
+        if(state.equals("recent"))
+        {
+            changeToRecentMovies(new ActionEvent());
+        }
+        if(state.equals("MaxRev")) {
+            changeToMaxRevenueMovie(new ActionEvent());
+        }
+        if(state.equals("DashBoard")) {
+            changeToDashBoard(new ActionEvent());
+        }
+        if(state.equals("AllMovies")) {
+            changeToAllMovies(new ActionEvent());
+        }
+        if(state.equals("TotalProfit")) {
+            changeToTotalProfit(new ActionEvent());
+        }
     }
 
     public void setButtonDefaultColor()

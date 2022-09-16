@@ -53,6 +53,7 @@ public class personalizedHboxFxml {
             }
             stage.setTitle("More Info");
             stage.setScene(new Scene(root));
+            stage.setResizable(false);
             stage.show();
         } catch (IOException e) {
             throw new RuntimeException(e);

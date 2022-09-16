@@ -91,6 +91,34 @@ public class ReadThread implements Runnable {
 
                     }
                 }
+                else if(releaseYearFxml instanceof DashBoard)
+                {
+                    String str = (String) s;
+                    if(str.charAt(0) == 'D' && str.charAt(1) == 'S')
+                    {
+                        String newStr = str.substring(2);
+                        String[] arr = (String[]) data;
+                        arr[0] = newStr;
+
+                        Platform.runLater(new Runnable() {
+                            @Override
+                            public void run() {
+                                ((DashBoard)releaseYearFxml).setData();
+                                ((DashBoard)releaseYearFxml).print();
+                            }
+                        });
+                    }
+                    else if(((String)s).equals("#MOVIETRANSFERRED#"))
+                    {
+                        Platform.runLater(new Runnable() {
+                            @Override
+                            public void run() {
+//                                tWindow.transferComplete();
+                                mainMenuController.refresh();
+                            }
+                        });
+                    }
+                }
                 else if (s instanceof ArrayList) {
                     ArrayList<Movie> movies = (ArrayList<Movie>) data;
                     movies.addAll((ArrayList<Movie>) s);

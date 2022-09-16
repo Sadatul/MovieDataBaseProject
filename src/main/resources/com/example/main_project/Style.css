@@ -14,6 +14,18 @@
     -fx-text-fill: #ee6c4d;
 }
 
+.dashLabel {
+    -fx-background-color: #3d5a80;
+    -fx-text-fill: #d4f1f4;
+}
+
+.dashLabel:hover {
+    -fx-background-color: #293241;
+    -fx-text-fill: #ee6c4d;
+    -fx-font-weight: bold;
+    -fx-font-size: 24;
+}
+
 .inbutton:hover {
     -fx-background-color: #293241;
     -fx-text-fill: #e0fbfc;

@@ -5,22 +5,27 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<Pane prefHeight="611.0" prefWidth="665.0" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.main_project.TotalProfitCompany">
+<Pane prefHeight="611.0" prefWidth="665.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.main_project.TotalProfitCompany">
     <children>
-      <Label layoutX="163.0" layoutY="265.0" prefHeight="47.0" prefWidth="103.0" text="Total Profit:" textFill="#05445e">
+      <Label id="profitLable" fx:id="totalProfit" alignment="CENTER" layoutX="175.0" layoutY="242.0" prefHeight="47.0" prefWidth="316.0" style="-fx-background-color: #3d5a80; -fx-text-fill: #d4f1f4;" textFill="#05445e">
          <font>
             <Font name="SansSerif Bold" size="18.0" />
          </font>
       </Label>
-      <Label fx:id="totalProfit" layoutX="273.0" layoutY="265.0" prefHeight="47.0" prefWidth="316.0" textFill="#05445e">
-         <font>
-            <Font name="SansSerif Bold" size="18.0" />
-         </font>
-      </Label>
-      <Button layoutX="333.0" layoutY="542.0" mnemonicParsing="false" onAction="#reload" prefHeight="55.0" prefWidth="102.0" styleClass="inbutton" text="Reload" textFill="WHITE">
+      <Button layoutX="282.0" layoutY="542.0" mnemonicParsing="false" onAction="#reload" prefHeight="55.0" prefWidth="102.0" styleClass="inbutton" text="Reload" textFill="WHITE">
          <font>
             <Font name="SansSerif Bold" size="14.0" />
          </font>
       </Button>
+      <Label layoutX="310.0" layoutY="306.0" prefHeight="21.0" prefWidth="47.0" text="Total" textFill="#293241">
+         <font>
+            <Font name="SansSerif Bold" size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="310.0" layoutY="327.0" text="Profit" textFill="#293241">
+         <font>
+            <Font name="SansSerif Bold" size="18.0" />
+         </font>
+      </Label>
     </children>
 </Pane>
