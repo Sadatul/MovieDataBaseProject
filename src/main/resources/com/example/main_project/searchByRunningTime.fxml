@@ -10,25 +10,24 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="451.0" prefWidth="750.0" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.main_project.ShowAllMovie">
+<AnchorPane prefHeight="451.0" prefWidth="750.0" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.main_project.SearchByRunningTime">
    <children>
-      <TextField fx:id="textFieldName" layoutX="98.0" layoutY="26.0" prefHeight="47.0" prefWidth="481.0" promptText="Enter Movie Name">
+      <TextField fx:id="textFieldName" layoutX="42.0" layoutY="36.0" prefHeight="47.0" prefWidth="243.0" promptText="Enter Runnig Time(Range Start)">
          <font>
-            <Font name="SansSerif Bold Italic" size="18.0" />
+            <Font name="SansSerif Bold Italic" size="14.0" />
          </font>
       </TextField>
-      <Button fx:id="searchButtonName" layoutX="579.0" layoutY="26.0" mnemonicParsing="false" onAction="#searchName" prefHeight="47.0" prefWidth="73.0" style="-fx-background-color: #05445E;" text="Search" textFill="WHITE">
+      <Button fx:id="searchButtonName" layoutX="589.0" layoutY="36.0" mnemonicParsing="false" onAction="#searchName" prefHeight="47.0" prefWidth="73.0" style="-fx-background-color: #05445E;" text="Search" textFill="WHITE">
          <font>
             <Font name="SansSerif Bold" size="14.0" />
          </font>
       </Button>
-      <Label fx:id="errorMessageName" alignment="CENTER" layoutX="189.0" layoutY="80.0" prefHeight="56.0" prefWidth="372.0" textFill="#aa1945">
+      <Label fx:id="errorMessageName" alignment="CENTER" layoutX="189.0" layoutY="92.0" prefHeight="56.0" prefWidth="372.0" textFill="#aa1945">
          <font>
             <Font name="SansSerif Bold" size="24.0" />
          </font>
       </Label>
-      <HBox fx:id="titleBar" layoutX="25.0" layoutY="147.0" prefHeight="33.0" prefWidth="699.0" style="-fx-background-color: #05445E;">
+      <HBox fx:id="titleBar" layoutX="25.0" layoutY="159.0" prefHeight="33.0" prefWidth="699.0" style="-fx-background-color: #05445E;">
          <children>
             <Label fx:id="siNo" alignment="CENTER" prefHeight="41.0" prefWidth="51.0" text="SI" textFill="WHITE">
                <font>
@@ -55,7 +54,7 @@
             </Label>
          </children>
       </HBox>
-      <ScrollPane fx:id="scrollPaneName" layoutX="25.0" layoutY="181.0" prefHeight="244.0" prefWidth="699.0" style="-fx-background-color: #D4F1F4;">
+      <ScrollPane fx:id="scrollPaneName" layoutX="25.0" layoutY="193.0" prefHeight="244.0" prefWidth="699.0" style="-fx-background-color: #D4F1F4;">
          <content>
             <AnchorPane prefHeight="244.0" prefWidth="597.0" style="-fx-background-color: #D4F1F4;">
                <children>
@@ -64,5 +63,10 @@
             </AnchorPane>
          </content>
       </ScrollPane>
+      <TextField fx:id="textFieldName1" layoutX="308.0" layoutY="36.0" prefHeight="47.0" prefWidth="225.0" promptText="Enter Runnig Time(Range End)">
+         <font>
+            <Font name="SansSerif Bold Italic" size="14.0" />
+         </font>
+      </TextField>
    </children>
 </AnchorPane>

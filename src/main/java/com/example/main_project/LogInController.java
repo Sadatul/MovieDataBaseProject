@@ -45,6 +45,11 @@ public class LogInController implements Initializable {
         if (!(object instanceof MovieNotFoundException)) {
 //                System.out.println(s);
 //                    continue;
+            if(((String)object).equals("#LOGGEDIN#"))
+            {
+                errorMessage.setText("Company is already logged in");
+                return;
+            }
             ClientApplication.client.setName((String) object);
 //            System.out.println(ClientApplication.client.getName());
             ClientApplication.client.setSocketWrapper(socketWrapper);
@@ -55,6 +60,7 @@ public class LogInController implements Initializable {
         }
         else
         {
+
             errorMessage.setText("Company Not Found");
         }
 

@@ -5,7 +5,7 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<Pane prefHeight="611.0" prefWidth="665.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.main_project.TotalProfitCompany">
+<Pane prefHeight="611.0" prefWidth="665.0" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.main_project.TotalProfitCompany">
     <children>
       <Label id="profitLable" fx:id="totalProfit" alignment="CENTER" layoutX="175.0" layoutY="242.0" prefHeight="47.0" prefWidth="316.0" style="-fx-background-color: #3d5a80; -fx-text-fill: #d4f1f4;" textFill="#05445e">
          <font>

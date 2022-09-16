@@ -51,7 +51,7 @@ public class personalizedHboxFxml {
             {
                 ((MoreInfo)fxmlLoader.getController()).noTransferButton();
             }
-            stage.setTitle("More Info");
+            stage.setTitle("More Info: " + ClientApplication.client.getName());
             stage.setScene(new Scene(root));
             stage.setResizable(false);
             stage.show();

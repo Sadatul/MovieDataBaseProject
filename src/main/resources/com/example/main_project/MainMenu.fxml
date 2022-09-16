@@ -13,7 +13,7 @@
    <children>
       <VBox prefHeight="611.0" prefWidth="260.0" style="-fx-background-color: #3d5a80;">
          <children>
-            <ImageView fitHeight="150.0" fitWidth="260.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fitHeight="129.0" fitWidth="260.0" pickOnBounds="true" preserveRatio="true" />
             <Button fx:id="companyButton" alignment="TOP_LEFT" graphicTextGap="22.0" layoutX="10.0" layoutY="314.0" mnemonicParsing="false" onAction="#changeToDashBoard" prefHeight="51.0" prefWidth="260.0" styleClass="sidebarItem" text="DashBoard" textFill="#d4f1f4">
                <font>
                   <Font name="SansSerif Bold" size="16.0" />
@@ -112,6 +112,21 @@
                   <ImageView fitHeight="43.0" fitWidth="44.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@Pictures/transfer.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <padding>
+                  <Insets left="10.0" top="5.0" />
+               </padding>
+            </Button>
+            <Button fx:id="searchButton" alignment="TOP_LEFT" graphicTextGap="20.0" layoutX="10.0" layoutY="447.0" mnemonicParsing="false" onAction="#changeToSearch" prefHeight="51.0" prefWidth="260.0" styleClass="sidebarItem" text="Search" textFill="#d4f1f4">
+               <font>
+                  <Font name="SansSerif Bold" size="16.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="43.0" fitWidth="44.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@Pictures/search.png" />
                      </image>
                   </ImageView>
                </graphic>

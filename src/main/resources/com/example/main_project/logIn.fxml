@@ -9,12 +9,12 @@
 
 <AnchorPane prefHeight="370.0" prefWidth="577.0" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.main_project.LogInController">
    <children>
-      <TextField fx:id="signInTextField" layoutX="32.0" layoutY="166.0" prefHeight="60.0" prefWidth="513.0" promptText="Enter Company Name" style="-fx-highlight-fill: null; -fx-highlight-text-fill: null;">
+      <TextField fx:id="signInTextField" layoutX="32.0" layoutY="129.0" prefHeight="60.0" prefWidth="513.0" promptText="Enter Company Name" style="-fx-highlight-fill: null; -fx-highlight-text-fill: null;">
          <font>
             <Font name="SansSerif Bold Italic" size="18.0" />
          </font>
       </TextField>
-      <Label layoutX="32.0" layoutY="106.0" prefHeight="60.0" prefWidth="223.0" text="Sign In" textFill="#05445e">
+      <Label layoutX="32.0" layoutY="69.0" prefHeight="60.0" prefWidth="223.0" text="Sign In" textFill="#05445e">
          <font>
             <Font name="System Bold" size="18.0" />
          </font>
@@ -22,8 +22,11 @@
             <Insets left="10.0" />
          </padding>
       </Label>
-      <Label fx:id="errorMessage" alignment="CENTER" layoutX="83.0" layoutY="308.0" prefHeight="18.0" prefWidth="412.0" textFill="#aa1945" />
-      <Button fx:id="signInButton" layoutX="237.0" layoutY="240.0" mnemonicParsing="false" onAction="#signIn" prefHeight="47.0" prefWidth="103.0" styleClass="inbutton" stylesheets="@Style.css" text="Sign In" textFill="WHITE">
+      <Label fx:id="errorMessage" alignment="CENTER" layoutX="83.0" layoutY="272.0" prefHeight="60.0" prefWidth="412.0" textFill="#aa1945">
+         <font>
+            <Font name="SansSerif Bold" size="18.0" />
+         </font></Label>
+      <Button fx:id="signInButton" layoutX="237.0" layoutY="203.0" mnemonicParsing="false" onAction="#signIn" prefHeight="47.0" prefWidth="103.0" styleClass="inbutton" stylesheets="@Style.css" text="Sign In" textFill="WHITE">
          <font>
             <Font name="SansSerif Bold" size="14.0" />
          </font>

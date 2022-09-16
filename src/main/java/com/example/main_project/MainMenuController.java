@@ -33,6 +33,9 @@ public class MainMenuController implements Initializable {
     private Button transferButton;
 
     @FXML
+    private Button searchButton;
+
+    @FXML
     private Button totalProfitButton;
     private String state;
     private String transferMovieName;
@@ -69,6 +72,8 @@ public class MainMenuController implements Initializable {
         companyButton.setOnMouseExited(hoverExitHandler);
         transferButton.setOnMouseEntered(hoverEnterHandler);
         transferButton.setOnMouseExited(hoverExitHandler);
+        searchButton.setOnMouseEntered(hoverEnterHandler);
+        searchButton.setOnMouseExited(hoverExitHandler);
 //        try {
 //            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("nameFxml.fxml"));
 //            Parent fxml = fxmlLoader.load();
@@ -79,6 +84,7 @@ public class MainMenuController implements Initializable {
 //        } catch (IOException e) {
 //            throw new RuntimeException(e);
 //        }
+        changeToDashBoard(new ActionEvent());
     }
 
     public void changeToRecentMovies(ActionEvent event) {
@@ -182,6 +188,23 @@ public class MainMenuController implements Initializable {
         }
     }
 
+    public void changeToSearch(ActionEvent event) {
+        state = "search";
+        setButtonDefaultColor();
+        searchButton.setOnMouseEntered(event1 -> {});
+        searchButton.setOnMouseExited(event1 -> {});
+        searchButton.setStyle("-fx-background-color:  #98c1d9; -fx-text-fill: #293241");
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("search.fxml"));
+            Parent fxml = fxmlLoader.load();
+//            Parent fxml = FXMLLoader.load(getClass().getResource("nameFxml.fxml"));
+            contentArea.getChildren().clear();
+            contentArea.getChildren().addAll(fxml);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
     public void changeToTransfer(ActionEvent event) {
         state = "Transfer";
         setButtonDefaultColor();
@@ -232,6 +255,7 @@ public class MainMenuController implements Initializable {
         addButton.setStyle("-fx-background-color:  #3d5a80; -fx-text-fill: #d4f1f4");
         companyButton.setStyle("-fx-background-color:  #3d5a80; -fx-text-fill: #d4f1f4");
         transferButton.setStyle("-fx-background-color:  #3d5a80; -fx-text-fill: #d4f1f4");
+        searchButton.setStyle("-fx-background-color:  #3d5a80; -fx-text-fill: #d4f1f4");
         totalProfitButton.setStyle("-fx-background-color:  #3d5a80; -fx-text-fill: #d4f1f4");
         allMovieButton.setOnMouseExited(hoverExitHandler);
         allMovieButton.setOnMouseEntered(hoverEnterHandler);
@@ -248,6 +272,8 @@ public class MainMenuController implements Initializable {
         companyButton.setOnMouseExited(hoverExitHandler);
         transferButton.setOnMouseEntered(hoverEnterHandler);
         transferButton.setOnMouseExited(hoverExitHandler);
+        searchButton.setOnMouseEntered(hoverEnterHandler);
+        searchButton.setOnMouseExited(hoverExitHandler);
     }
     EventHandler<MouseEvent> hoverEnterHandler = event -> {
         ((Button)(event.getTarget())).setStyle("-fx-background-color: #98c1d9; -fx-text-fill: #293241; -fx-border-color: #ee6c4d ; -fx-border-width: 0px 0px 0px 5px;");
@@ -261,5 +287,6 @@ public class MainMenuController implements Initializable {
     EventHandler<MouseEvent> emptyHandler = event -> {
 
     };
+
 }
 

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="611.0" prefWidth="750.0" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.main_project.Search">
+   <children>
+      <AnchorPane fx:id="timePane" prefHeight="611.0" prefWidth="750.0">
+         <children>
+            <Button fx:id="timeButton" mnemonicParsing="false" onAction="#timePaneToggle" prefHeight="40.0" prefWidth="750.0" style="-fx-background-color: #98c1d9; -fx-border-width: 0px 0px 6px 0px; -fx-border-color: #293241;" styleClass="sbutton" text="Running Time">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font></Button>
+            <VBox fx:id="vBoxTime" layoutY="40.0" prefHeight="451.0" prefWidth="750.0" />
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="yearPane" layoutY="40.0" prefHeight="571.0" prefWidth="750.0">
+         <children>
+            <Button fx:id="yearButton" mnemonicParsing="false" onAction="#yearPaneToggle" prefHeight="40.0" prefWidth="750.0" style="-fx-background-color: #98c1d9; -fx-border-width: 3px 3px 4px 3px; -fx-border-color: #293241;" text="Release Year">
+               <font>
+                  <Font size="14.0" />
+               </font></Button>
+            <VBox fx:id="vBoxYear" layoutY="40.0" prefHeight="451.0" prefWidth="750.0" />
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="genrePane" layoutY="80.0" prefHeight="531.0" prefWidth="750.0">
+         <children>
+            <Button fx:id="genrePaneButton" mnemonicParsing="false" onAction="#genrePaneToggle" prefHeight="40.0" prefWidth="750.0" style="-fx-background-color: #98c1d9; -fx-border-width: 3px 3px 3px 3px; -fx-border-color: #293241;" styleClass="sbutton" text="Genre">
+               <font>
+                  <Font size="14.0" />
+               </font></Button>
+            <VBox fx:id="vBoxGenre" layoutY="40.0" prefHeight="451.0" prefWidth="750.0" />
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="namePane" layoutY="120.0" prefHeight="491.0" prefWidth="750.0">
+         <children>
+            <Button fx:id="nameButton" mnemonicParsing="false" onAction="#namePaneToggle" prefHeight="40.0" prefWidth="750.0" style="-fx-background-color: #98c1d9; -fx-border-width: 3px 3px 3px 3px; -fx-border-color: #293241;" styleClass="sbutton" stylesheets="@Style.css" text="Name">
+               <font>
+                  <Font size="13.0" />
+               </font></Button>
+            <VBox fx:id="vBoxName" layoutY="40.0" prefHeight="451.0" prefWidth="750.0" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
