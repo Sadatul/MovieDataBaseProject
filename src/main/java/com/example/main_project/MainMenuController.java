@@ -245,6 +245,9 @@ public class MainMenuController implements Initializable {
         if(state.equals("TotalProfit")) {
             changeToTotalProfit(new ActionEvent());
         }
+        if(state.equals("search")) {
+            changeToSearch(new ActionEvent());
+        }
     }
 
     public void setButtonDefaultColor()

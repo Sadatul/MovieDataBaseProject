@@ -24,20 +24,16 @@ public class ReadThread implements Runnable {
     }
     public void setData(Object o)
     {
-//        System.out.println("Setted Data");
         data = o;
     }
     public void setReleaseYearFxml(Object releaseYearFxml)
     {
-//        System.out.println("Setted Class");
         this.releaseYearFxml = releaseYearFxml;
     }
     public void run() {
         try {
             while (true) {
-//                System.out.println("YES");
                 Object s = socketWrapper.read();
-//                System.out.println("YES");
                 if(releaseYearFxml instanceof TransferWindow) {
                     TransferWindow tWindow = (TransferWindow) releaseYearFxml;
                     if (s == null) {
