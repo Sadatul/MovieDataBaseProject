@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<Pane prefHeight="611.0" prefWidth="750.0" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.main_project.NameFxml">
+   <children>
+      <TextField fx:id="textField" layoutX="98.0" layoutY="41.0" prefHeight="47.0" prefWidth="481.0" promptText="Enter Movie Name">
+         <font>
+            <Font name="SansSerif Bold Italic" size="18.0" />
+         </font></TextField>
+      <Button fx:id="searchButton" layoutX="579.0" layoutY="41.0" mnemonicParsing="false" onAction="#search" prefHeight="47.0" prefWidth="73.0" style="-fx-background-color: #05445E;" text="Search" textFill="WHITE">
+         <font>
+            <Font name="SansSerif Bold" size="14.0" />
+         </font>
+      </Button>
+      <Label fx:id="errorMessage" alignment="CENTER" layoutX="189.0" layoutY="108.0" prefHeight="56.0" prefWidth="372.0" textFill="#aa1945">
+         <font>
+            <Font name="SansSerif Bold" size="24.0" />
+         </font>
+      </Label>
+      <AnchorPane fx:id="anchorPane" layoutX="74.0" layoutY="203.0" prefHeight="210.0" prefWidth="602.0">
+         <children>
+            <HBox prefHeight="47.0" prefWidth="602.0" style="-fx-background-color: #2E8BC0;">
+               <children>
+                  <Label prefHeight="47.0" prefWidth="196.0" text="Name" textFill="WHITE">
+                     <font>
+                        <Font name="SansSerif Regular" size="14.0" />
+                     </font>
+                     <padding>
+                        <Insets left="10.0" />
+                     </padding>
+                  </Label>
+                  <Label fx:id="name" prefHeight="47.0" prefWidth="490.0" textFill="WHITE">
+                     <font>
+                        <Font name="SansSerif Bold" size="14.0" />
+                     </font>
+                     <padding>
+                        <Insets left="10.0" />
+                     </padding>
+                  </Label>
+               </children>
+            </HBox>
+            <HBox layoutY="47.0" prefHeight="47.0" prefWidth="602.0" style="-fx-background-color: #B1D4E0;">
+               <children>
+                  <Label prefHeight="47.0" prefWidth="196.0" text="Genre" textFill="#05445e">
+                     <font>
+                        <Font name="SansSerif Regular" size="14.0" />
+                     </font>
+                     <padding>
+                        <Insets left="10.0" />
+                     </padding>
+                  </Label>
+                  <Label fx:id="genre" prefHeight="47.0" prefWidth="490.0" textFill="#05445e">
+                     <font>
+                        <Font name="SansSerif Bold" size="14.0" />
+                     </font>
+                     <padding>
+                        <Insets left="10.0" />
+                     </padding>
+                  </Label>
+               </children>
+            </HBox>
+            <HBox layoutY="94.0" prefHeight="47.0" prefWidth="602.0" style="-fx-background-color: #2E8BC0;">
+               <children>
+                  <Label prefHeight="47.0" prefWidth="196.0" text="Production Company:" textFill="WHITE">
+                     <font>
+                        <Font name="SansSerif Regular" size="14.0" />
+                     </font>
+                     <padding>
+                        <Insets left="10.0" />
+                     </padding>
+                  </Label>
+                  <Label fx:id="companyName" prefHeight="47.0" prefWidth="490.0" textFill="WHITE">
+                     <font>
+                        <Font name="SansSerif Bold" size="14.0" />
+                     </font>
+                     <padding>
+                        <Insets left="10.0" />
+                     </padding>
+                  </Label>
+               </children>
+            </HBox>
+            <HBox layoutY="141.0" prefHeight="47.0" prefWidth="602.0" style="-fx-background-color: #B1D4E0;">
+               <children>
+                  <Label prefHeight="47.0" prefWidth="114.0" text="Release Year:" textFill="#05445e">
+                     <font>
+                        <Font name="SansSerif Regular" size="14.0" />
+                     </font>
+                     <padding>
+                        <Insets left="10.0" />
+                     </padding>
+                  </Label>
+                  <Label fx:id="year" prefHeight="47.0" prefWidth="160.0" textFill="#05445e">
+                     <font>
+                        <Font name="SansSerif Bold" size="14.0" />
+                     </font>
+                     <padding>
+                        <Insets left="10.0" />
+                     </padding>
+                  </Label>
+                  <Label layoutX="10.0" layoutY="10.0" prefHeight="47.0" prefWidth="74.0" text="Budget:" textFill="#05445e">
+                     <font>
+                        <Font name="SansSerif Regular" size="14.0" />
+                     </font>
+                     <padding>
+                        <Insets left="10.0" />
+                     </padding>
+                  </Label>
+                  <Label fx:id="budget" layoutX="103.0" layoutY="10.0" prefHeight="47.0" prefWidth="253.0" textFill="#05445e">
+                     <font>
+                        <Font name="SansSerif Bold" size="14.0" />
+                     </font>
+                     <padding>
+                        <Insets left="10.0" />
+                     </padding>
+                  </Label>
+               </children>
+            </HBox>
+            <HBox layoutY="188.0" prefHeight="47.0" prefWidth="602.0" style="-fx-background-color: #2E8BC0;">
+               <children>
+                  <Label prefHeight="47.0" prefWidth="114.0" text="Running Time:" textFill="WHITE">
+                     <font>
+                        <Font name="SansSerif Regular" size="14.0" />
+                     </font>
+                     <padding>
+                        <Insets left="10.0" />
+                     </padding>
+                  </Label>
+                  <Label fx:id="runningTime" prefHeight="47.0" prefWidth="160.0" textFill="WHITE">
+                     <font>
+                        <Font name="SansSerif Bold" size="14.0" />
+                     </font>
+                     <padding>
+                        <Insets left="10.0" />
+                     </padding>
+                  </Label>
+                  <Label layoutX="10.0" layoutY="10.0" prefHeight="47.0" prefWidth="74.0" text="Revenue:" textFill="WHITE">
+                     <font>
+                        <Font name="SansSerif Regular" size="14.0" />
+                     </font>
+                     <padding>
+                        <Insets left="10.0" />
+                     </padding>
+                  </Label>
+                  <Label fx:id="revenue" layoutX="103.0" layoutY="10.0" prefHeight="47.0" prefWidth="253.0" textFill="WHITE">
+                     <font>
+                        <Font name="SansSerif Bold" size="14.0" />
+                     </font>
+                     <padding>
+                        <Insets left="10.0" />
+                     </padding>
+                  </Label>
+               </children>
+            </HBox>
+         </children>
+      </AnchorPane>
+   </children>
+</Pane>
