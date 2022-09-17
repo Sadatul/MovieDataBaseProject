@@ -80,27 +80,7 @@ public class Search extends RecentMovies{
     }
 
     public void namePaneToggle(ActionEvent event) {
-        if(namePaneState.equals("ACTIVE"))
-        {
-            if(!(activeStack.peek().equals("name")))
-            {
-                return;
-            }
-            TranslateTransition slide = new TranslateTransition();
-            slide.setDuration(Duration.seconds(0.4));
-            slide.setNode(namePane);
-
-            slide.setToY(451);
-            slide.play();
-
-//            namePane.setTranslateY(200);
-            slide.setOnFinished((ActionEvent e) ->{
-                namePaneState = "INACTIVE";
-                inactiveStack.push(activeStack.pop());
-                setUp();
-            });
-        }
-        else if (namePaneState.equals("INACTIVE"))
+        if (namePaneState.equals("INACTIVE"))
         {
             if(!(inactiveStack.peek().equals("name")))
             {
@@ -123,9 +103,6 @@ public class Search extends RecentMovies{
     }
 
     public void timePaneToggle(ActionEvent event) {
-    }
-
-    public void yearPaneToggle(ActionEvent event) {
         if(yearPaneState.equals("ACTIVE"))
         {
             if(!(activeStack.peek().equals("year")))
@@ -146,6 +123,33 @@ public class Search extends RecentMovies{
                 setUp();
             });
         }
+    }
+
+    public void yearPaneToggle(ActionEvent event) {
+
+        if(genrePaneState.equals("ACTIVE"))
+        {
+
+            if(!(activeStack.peek().equals("genre")))
+            {
+                return;
+            }
+            TranslateTransition slide = new TranslateTransition();
+            slide.setDuration(Duration.seconds(0.4));
+            slide.setNode(genrePane);
+
+            slide.setToY(451);
+            slide.play();
+
+//            namePane.setTranslateY(200);
+            slide.setOnFinished((ActionEvent e) ->{
+                genrePaneState = "INACTIVE";
+                inactiveStack.push(activeStack.pop());
+                setUp();
+
+            });
+        }
+
         else if (yearPaneState.equals("INACTIVE"))
         {
             if(!(inactiveStack.peek().equals("year")))
@@ -169,27 +173,28 @@ public class Search extends RecentMovies{
     }
 
     public void genrePaneToggle(ActionEvent event) {
-        if(genrePaneState.equals("ACTIVE"))
+        if(namePaneState.equals("ACTIVE"))
         {
-            if(!(activeStack.peek().equals("genre")))
+            if(!(activeStack.peek().equals("name")))
             {
                 return;
             }
             TranslateTransition slide = new TranslateTransition();
             slide.setDuration(Duration.seconds(0.4));
-            slide.setNode(genrePane);
+            slide.setNode(namePane);
 
             slide.setToY(451);
             slide.play();
 
 //            namePane.setTranslateY(200);
             slide.setOnFinished((ActionEvent e) ->{
-                genrePaneState = "INACTIVE";
+                namePaneState = "INACTIVE";
                 inactiveStack.push(activeStack.pop());
                 setUp();
-
             });
         }
+
+
         else if (genrePaneState.equals("INACTIVE"))
         {
             if(!(inactiveStack.peek().equals("genre")))
